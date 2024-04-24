@@ -2,9 +2,9 @@ import Link from "next/link";
 import { useRouter } from "next/router";
 import { useState, type FunctionComponent } from "react";
 
-interface CollapseProps {}
+// interface CollapseProps {}
 
-export const Collapse: FunctionComponent<CollapseProps> = () => {
+export const Collapse: FunctionComponent = () => {
   const router = useRouter();
 
   const locales = [
