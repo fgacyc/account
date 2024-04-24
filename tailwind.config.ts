@@ -9,6 +9,7 @@ export default {
       fontFamily: {
         sf: ["'SF Pro Display'", ...fontFamily.sans],
         montserrat: ["var(--font-sans)", ...fontFamily.sans],
+        inter: ["var(--font-inter)", ...fontFamily.sans],
       },
     },
   },

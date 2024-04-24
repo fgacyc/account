@@ -1,8 +1,5 @@
 /* eslint-disable @next/next/no-img-element */
-/* eslint-disable @typescript-eslint/no-unsafe-member-access */
-/* eslint-disable @typescript-eslint/no-unsafe-call */
-/* eslint-disable @typescript-eslint/no-unsafe-assignment */
-/* eslint-disable @typescript-eslint/ban-ts-comment */
+
 import {
   type Dispatch,
   Fragment,
@@ -16,33 +13,16 @@ import { useTheme } from "@/stores/useTheme";
 import { PiMoon, PiSun } from "react-icons/pi";
 import { Collapse } from "../Button/Collapse";
 // import { montserrat } from "@/pages/_app";
-// import { useRouter } from "next/router";
+import { useRouter } from "next/router";
+import { locales } from "../Layout";
+import { inter, montserrat } from "@/pages/_app";
 
 interface DrawerProps {
   open: boolean;
   onClose: Dispatch<SetStateAction<boolean>>;
-  //   installPrompt?: Event;
-  //   setInstallPrompt: Dispatch<SetStateAction<Event | undefined>>;
-  //   registration?: ServiceWorkerRegistration;
-  // setRegistration: Dispatch<
-  //   SetStateAction<ServiceWorkerRegistration | undefined>
-  // >;
-  //   subscription?: PushSubscription;
-  //   setSubscription: Dispatch<SetStateAction<PushSubscription | undefined>>;
-  //   isSubscribed: boolean;
-  //   setIsSubscribed: Dispatch<SetStateAction<boolean>>;
 }
-export const Drawer: FunctionComponent<DrawerProps> = ({
-  open,
-  onClose,
-  //   installPrompt,
-  //   setInstallPrompt,
-  // subscription,
-  // registration,
-  // setSubscription,
-  // setIsSubscribed,
-}) => {
-  //   const router = useRouter();
+export const Drawer: FunctionComponent<DrawerProps> = ({ open, onClose }) => {
+  const router = useRouter();
 
   const { theme, setTheme } = useTheme();
   const t = useTranslations();
@@ -51,7 +31,7 @@ export const Drawer: FunctionComponent<DrawerProps> = ({
     <Transition.Root show={open} as={Fragment}>
       <Dialog
         as="div"
-        className={`relative z-[120] font-sf ${theme}`}
+        className={`relative z-[120] ${montserrat.variable} ${inter.variable} ${theme}`}
         onClose={onClose}
       >
         <Transition.Child
@@ -133,7 +113,10 @@ export const Drawer: FunctionComponent<DrawerProps> = ({
                           <PiSun size={20} className="text-black opacity-70" />
                         )}
                       </button>
-                      <Collapse />
+                      <Collapse
+                        primary={String(router.locale)}
+                        items={locales}
+                      />
                     </div>
                   </div>
                 </Dialog.Panel>

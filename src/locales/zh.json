@@ -1,3 +1,6 @@
 {
-  "title": "账号管理中心"
+  "title": "账号管理中心",
+  "personal_info": "个人资料",
+  "fam_info": "家庭关系",
+  "pastoral_info": "牧羊"
 }

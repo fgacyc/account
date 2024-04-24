@@ -1,3 +1,6 @@
 {
-  "title": "Account Centre"
+  "title": "Account Centre",
+  "personal_info": "Personal",
+  "fam_info": "Family",
+  "pastoral_info": "Pastoral"
 }
