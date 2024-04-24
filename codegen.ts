@@ -1,5 +1,5 @@
 import type { CodegenConfig } from "@graphql-codegen/cli";
-import { addTypenameSelectionDocumentTransform } from "@graphql-codegen/client-preset";
+// import { addTypenameSelectionDocumentTransform } from "@graphql-codegen/client-preset";
 
 const config: CodegenConfig = {
   overwrite: true,
@@ -9,7 +9,7 @@ const config: CodegenConfig = {
   generates: {
     "src/gql/": {
       preset: "client",
-      documentTransforms: [addTypenameSelectionDocumentTransform],
+      // documentTransforms: [addTypenameSelectionDocumentTransform],
       plugins: [],
       config: {
         scalars: {

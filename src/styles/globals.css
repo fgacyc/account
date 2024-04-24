@@ -103,3 +103,7 @@
   font-style: italic;
   src: url(/assets/fonts/SF-Pro-Display-BlackItalic.otf);
 }
+
+* {
+  @apply transition-colors duration-150 ease-in-out;
+}

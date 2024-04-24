@@ -7,7 +7,7 @@ import { useTheme } from "@/stores/useTheme";
 import { NextIntlClientProvider } from "next-intl";
 import { useRouter } from "next/router";
 
-const montserrat = Montserrat({
+export const montserrat = Montserrat({
   subsets: ["latin"],
   variable: "--font-sans",
 });
