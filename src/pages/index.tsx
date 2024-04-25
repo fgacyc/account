@@ -1,19 +1,20 @@
 /* eslint-disable @next/next/no-img-element */
+import { graphql } from "@/gql";
 import { type GetStaticProps } from "next";
 import Head from "next/head";
 // import Link from "next/link";
 
-// const GET_USERS = graphql(`
-//   query GetUsers {
-//     userCollection {
-//       edges {
-//         node {
-//           id
-//         }
-//       }
-//     }
-//   }
-// `);
+const GET_USERS = graphql(`
+  query GetUsers {
+    userCollection {
+      edges {
+        node {
+          id
+        }
+      }
+    }
+  }
+`);
 
 export default function Home() {
   // const { data, error, isLoading } = useQuery({
